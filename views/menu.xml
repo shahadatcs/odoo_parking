@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!--    menu items for all. private, public parking entries-->
+    <menuitem id="parking_entry_menu_parking_management_root"
+              name="Parking"
+              web_icon="odoo_parking_management,static/description/icon.png"
+              sequence="20"/>
+
+    <menuitem id="menu_entry_parking"
+              name="Parking Entry"
+              parent="odoo_parking_management.parking_entry_menu_parking_management_root"
+              sequence="21"/>
+
+    <menuitem id="menu_private_parking"
+              name="Private Entry"
+              parent="odoo_parking_management.menu_entry_parking"
+              action="parking_entry_action_private_parking_entry"
+              sequence="20"/>
+    <menuitem id="menu_public_parking"
+              name="Public Entry"
+              parent="odoo_parking_management.menu_entry_parking"
+              action="parking_entry_action_public_parking_entry"
+              sequence="10"/>
+
+    <menuitem id="parking_entry_menu_configuration_root"
+              name="Configuration"
+              parent="odoo_parking_management.parking_entry_menu_parking_management_root"
+              groups="odoo_parking_management_group_parking_manager"
+              sequence="1000"/>
+    <menuitem id="menu_reporting_root"
+              name="Reporting"
+              parent="odoo_parking_management.parking_entry_menu_parking_management_root"
+              groups="odoo_parking_management_group_parking_manager"
+              sequence="80"/>
+    <menuitem id="menu_all_parking_entries"
+              name="All Parking Entries"
+              parent="odoo_parking_management.menu_reporting_root"
+              action="parking_entry_action_all_parking_entries"
+              sequence="20"/>
+
+    <!--    Menu item for slot details-->
+    <menuitem id="menu_slot_details"
+              name="Slots"
+              parent="odoo_parking_management.parking_entry_menu_configuration_root"
+              action="slot_details_action_slot_details"
+              sequence="60"/>
+    <menuitem id="menu_slots_root"
+              name="Slots"
+              parent="odoo_parking_management.parking_entry_menu_parking_management_root"
+              groups="odoo_parking_management_group_parking_manager"
+              sequence="60"/>
+    <menuitem id="menu_all_slots"
+              name="All Slots"
+              parent="odoo_parking_management.menu_slots_root"
+              action="slot_details_action_all_slots"
+              sequence="20"/>
+    <menuitem id="menu_allocated_slots"
+              name="Booked Slots"
+              parent="odoo_parking_management.menu_slots_root"
+              action="parking_entry_action_allocated_slots"
+              sequence="40"/>
+    <menuitem id="menu_not_allocated_slots"
+              name="Unbooked Slots"
+              parent="odoo_parking_management.menu_slots_root"
+              action="parking_entry_action_non_allocated_slots"
+              sequence="40"/>
+
+    <!--    Menu item for Slot Type-->
+    <menuitem id="menu_slot_type"
+              name="Slot Types"
+              parent="odoo_parking_management.parking_entry_menu_configuration_root"
+              action="slot_type_action_slot_type_details"
+              sequence="20"/>
+
+    <!--    Menu item for member slot reservation-->
+    <menuitem id="menu_member_slot_reservation"
+              name="Member Slot Reservations"
+              parent="odoo_parking_management.parking_entry_menu_configuration_root"
+              action="member_slot_reservation_action_member_slot_reservation"
+              sequence="80"/>
+
+    <!--    Menu item for location details-->
+    <menuitem id="menu_location_details"
+              name="Locations"
+              parent="odoo_parking_management.parking_entry_menu_configuration_root"
+              action="location_details_action_location_details"
+              sequence="40"/>
+    <!--    Menu item for vehicle details-->
+    <menuitem id="menu_vehicle_details"
+              name="Vehicle"
+              parent="odoo_parking_management.parking_entry_menu_configuration_root"
+              action="vehicle_details_action_vehicle_details"
+              sequence="100"/>
+</odoo>
